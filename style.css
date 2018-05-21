@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.background-wrapper {
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    padding-top: 500px;
+}
+.page-content-wrapper {
+    width: 50px;
+}
+
+.square {
+    height: 60vw;
+    position: relative;
+}
+
+.triangle {
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    top: 0;
+    left: 0;
+    outline: 1px solid transparent;
+}
+
+.square:nth-child(1n+1) {
+    background-color: blue;
+}
+.square:nth-child(2n+2) {
+     background-color: green;
+}
+.square:nth-child(3n+3) {
+    background-color: yellow;
+}
+.square:nth-child(4n+4) {
+    background-color: red;
+}
+.square:nth-child(5n+5) {
+    background-color: white;
+}
+
+
+.square:nth-child(1n+1) .triangle {
+    background-image: linear-gradient(to right bottom, white calc(0% + 1px), white calc(50% + 1px), transparent calc(50% + 1px));
+}
+.square:nth-child(2n+2) .triangle {
+    background-image: linear-gradient(to left bottom, blue calc(0% + 1px), blue calc(50% + 1px), transparent calc(50% + 1px));
+}
+.square:nth-child(3n+3) .triangle {
+    background-image: linear-gradient(to right bottom, green calc(0% + 1px), green calc(50% + 1px), transparent calc(50% + 1px));
+}
+.square:nth-child(4n+4) .triangle {
+    background-image: linear-gradient(to left bottom, yellow calc(0% + 1px), yellow calc(50% + 1px), transparent calc(50% + 1px));
+}
+.square:nth-child(5n+5) .triangle {
+    background-image: linear-gradient(to right bottom, red calc(0% + 1px), red calc(50% + 1px), transparent calc(50% + 1px));
+}

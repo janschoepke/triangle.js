@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Triangle.js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../lib/triangle.css" />
+    <style>
+        .lorem-ipsum {
+            display: none;
+        }
+        .card {
+            margin: 200px 0 150px;
+            width: 90%;
+            max-width: 1500px;
+        }
+        .margin-top-30 {
+            margin-top: 30px;
+        }
+        .margin-top-50 {
+            margin-top: 50px;
+        }
+        .btn-group-justified {
+            display: flex;
+        }
+        .btn-group-justified .btn {
+            flex-grow: 1;
+        }
+        .headline {
+            color: #011223;
+            -webkit-transition: color 400ms linear;
+            -ms-transition: color 400ms linear;
+            transition: color 400ms linear;
+        }
+    </style>
+</head>
+<body>
+<a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+<div class="container-fluid">
+        <div class="card mx-auto">
+            <div class="card-body">
+                <h1 class="display-1 text-center headline">Triangle.js</h1>
+
+                <p class="lead text-center margin-top-50">
+                    A smart and tiny, no-dependency JavaScript/CSS library for creating beautiful colored triangle backgrounds.
+                </p>
+
+                <div class="alert alert-warning margin-top-50" role="alert">
+                    <strong>Attention!</strong> Even if Triangle.js does a great job at the moment, it is still in beta. Please <a href="#">report any bugs or problems on GitHub</a>.
+                </div>
+
+                <h2 class="display-4 margin-top-50 headline">Installation</h2>
+
+                <p class="margin-top-30">The installation of Triangle.js is quite easy: </p>
+
+                <ul>
+                    <li>The manual way: Download Triangle.js from the <a href="#">github repository</a> and save it to your project structure.</li>
+                    <li>Installation with <a href="#">bower</a>: <code>bower install trianglejs</code></li>
+                    <li>Installation with <a href="#">npm</a>: <code>npm install trianglejs</code></li>
+                </ul>
+
+                <p>
+                    After installing Triangle.js, easily include the required scripts to your website. Copy the stylesheet link into the <code>&lt;head&gt;</code>-area before your custom CSS:
+                </p>
+
+                <code>&lt;link rel="stylesheet" href="PATH/TO/triangle.css" /&gt;</code>
+                <br /><br />
+
+                <p>
+                    Triangle.js's JavaScript was built without any dependencies. The only thing you have to do is including the following <code>&lt;script&gt;</code> tag near the end of your page, right before the closing <code>&lt;/body&gt;</code> tag:
+                </p>
+
+                <code>&lt;script src="PATH/TO/triangle.js"&gt;&lt;/script&gt;</code>
+
+                <h2 class="display-4 margin-top-50 headline">Initialization</h2>
+
+                <p class="margin-top-30">
+                    Using Triangle.js is easy. First, initialize the JavaScript by pasting the following lines below the JavaScript &lt;script&gt; tag included above:
+                </p>
+
+                <code>
+                    var triangle = new Triangle();
+                </code>
+
+                <h3 class="display-5 margin-top-30 headline">Options</h3>
+
+                <div class="table-responsive margin-top-30">
+                    <table class="table">
+                        <thead>
+                            <tr class="row m-0">
+                                <th scope="col" class="d-inline-block col-3">Name</th>
+                                <th scope="col" class="d-inline-block col-2">Type</th>
+                                <th scope="col" class="d-inline-block col-2">Default</th>
+                                <th scope="col" class="d-inline-block col-5">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row m-0">
+                                <th class="d-inline-block col-3" scope="row">colors</th>
+                                <td class="d-inline-block col-2">[String]</td>
+                                <td class="d-inline-block col-2">['#ffffff', '#ff8a64', '#ffca27', '#f57b01', '#039be5']</td>
+                                <td class="col-5">The color palette for Triangle.js.</td>
+                            </tr>
+                            <tr class="row m-0">
+                                <th class="d-inline-block col-3" scope="row">marginTop</th>
+                                <td class="d-inline-block col-2">String</td>
+                                <td class="d-inline-block col-2">"30vw"</td>
+                                <td class="d-inline-block col-5">Margin-top value for triangle background.</td>
+                            </tr>
+                            <tr class="row m-0">
+                                <th class="d-inline-block col-3" scope="row">triangleHeight</th>
+                                <td class="d-inline-block col-2">String</td>
+                                <td class="d-inline-block col-2">"60vw"</td>
+                                <td class="d-inline-block col-5">Height value for each background tile.</td>
+                            </tr>
+                            <tr class="row m-0">
+                                <th class="d-inline-block col-3" scope="row">preloadCount</th>
+                                <td class="d-inline-block col-2">int</td>
+                                <td class="d-inline-block col-2">2</td>
+                                <td class="d-inline-block col-5">Amount of background tiles to preload. Useful in combination with dynamic page content like accordions.</td>
+                            </tr>
+                            <tr class="row m-0">
+                                <th class="d-inline-block col-3" scope="row">animateOnChange</th>
+                                <td class="d-inline-block col-2">boolean</td>
+                                <td class="d-inline-block col-2">true</td>
+                                <td class="d-inline-block col-5">Enables or disables CSS transition on color palette change (call of <code>changeStyle()</code>).</td>
+                            </tr>
+                            <tr class="row m-0">
+                                <th class="d-inline-block col-3" scope="row">debug</th>
+                                <td class="d-inline-block col-2">boolean</td>
+                                <td class="d-inline-block col-2">false</td>
+                                <td class="d-inline-block col-5">Enables output of some debug messages.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="display-5 margin-top-30 headline">Methods</h3>
+
+                <div class="table-responsive margin-top-30">
+                    <table class="table">
+                        <thead>
+                            <tr class="row m-0">
+                                <th class="d-inline-block col-3" scope="col">Name</th>
+                                <th class="d-inline-block col-4" scope="col">Type</th>
+                                <th class="d-inline-block col-5" scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row m-0">
+                                <th class="d-inline-block col-3" scope="row">recalculate</th>
+                                <td class="d-inline-block col-4">no parameter</td>
+                                <td class="d-inline-block col-5">Method to recalculate the triangle background with given parameters. Very useful when manipulating the DOM via AJAX oder animating various site elements which differ in height and the preload option is not useful.</td>
+                            </tr>
+                            <tr class="row m-0">
+                                <th class="d-inline-block col-3" scope="row">changeStyle</th>
+                                <td class="d-inline-block col-4">[string]</td>
+                                <td class="d-inline-block col-5">Method to dynamically change the triangle colors. Example can be found on this site, where colors are changing every 10 seconds.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 class="display-4 margin-top-50 headline">Dynamic content</h2>
+
+                <p class="margin-top-30">
+                    To demonstrate how dynamic background generation is working, press the button below to append some lorem ipsum text to this website. Feel free to inspect the DOM in the same time to see, that the background pattern is really generated dynamically.
+                </p>
+
+                <blockquote class="blockquote text-center margin-top-50">
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <div class="example-citation"></div>
+                    <footer class="blockquote-footer">Someone famous</footer>
+                </blockquote>
+
+                <div class="btn-group btn-group-justified margin-top-50">
+                    <input type="submit" name="save" value="Append Lorem Ipsum" class="btn btn-lg btn-secondary append-text">
+                    <input type="button" name="cancel" value="Reset" class="btn btn-lg btn-secondary reset-text">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../lib/triangle.js"></script>
+    <script>
+        var triangle = new Triangle();
+
+        var colorPalettes = [
+            ['#ffffff', '#ff8a64', '#ffca27', '#f57b01', '#039be5'],
+            ['#989ACC', '#2F2C4D', '#FFFFFF', '#A297D1', '#8394CB'],
+            ['#FFFFFF', '#BFBFBF', '#202020', '#7F7F7F', '#404040'],
+            ['#1C3F51', '#03293F', '#001E33', '#011223', '#080E16'],
+            ['#893737', '#B94637', '#D34F2D', '#DC9046', '#EAB874'],
+            ['#104EA0', '#820933', '#0072BB', '#6A0136', '#861657'],
+            ['#114B5F', '#FCDB00', '#FCF7FD', '#2EB3FF', '#48EFBA']
+        ];
+
+        var currentColor = 0;
+        var $headline = $('.headline');
+
+        function shuffleColor() {
+            currentColor = (currentColor + 1) % colorPalettes.length;
+            $headline.css( {
+                color: colorPalettes[currentColor][3]
+            });
+            triangle.changeStyle(colorPalettes[currentColor]);
+        }
+
+        window.setInterval(function(){
+            shuffleColor();
+        }, 10000);
+
+    </script>
+    <script>
+        var loremIpsum = "Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \n" +
+            "\n" +
+            "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   \n" +
+            "\n" +
+            "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   \n" +
+            "\n" +
+            "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   \n" +
+            "\n" +
+            "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   \n" +
+            "\n" +
+            "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua.";
+
+        $row = $('.example-citation');
+        $('.append-text').on('click', function() {
+            $row.append('<div class="col-sm-8 mx-auto lorem-ipsum">' + loremIpsum + '</div>');
+            $('.lorem-ipsum:last-of-type').slideDown(function() {
+                $row.slideDown(function() {
+                    triangle.recalculate();
+                });
+            });
+        });
+        $('.reset-text').on('click', function() {
+            $row.slideUp(function() {
+                $row.text('');
+            });
+        });
+    </script>
+</body>
+</html>

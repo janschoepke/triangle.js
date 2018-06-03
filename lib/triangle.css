@@ -24,6 +24,10 @@ body {
     transition: opacity 200ms linear;
 }
 
+.background-wrapper.fade-in {
+    opacity: 0;
+}
+
 .background-wrapper.change-in-progress {
     opacity: 0;
 }

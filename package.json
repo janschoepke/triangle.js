@@ -1,0 +1,31 @@
+{
+  "name": "@janschoepke/triangle-js",
+  "version": "1.0.0",
+  "description": "A smart and tiny, no-dependency JavaScript/CSS library for creating beautiful colored triangle backgrounds.",
+  "main": "lib/triangle.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janschoepke/triangle.js.git"
+  },
+  "keywords": [
+    "javascript",
+    "background",
+    "colors",
+    "triangles",
+    "triangle",
+    "colorful"
+  ],
+  "author": "Jan Schoepke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janschoepke/triangle.js/issues"
+  },
+  "homepage": "https://github.com/janschoepke/triangle.js#readme"
+}
